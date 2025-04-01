@@ -38,7 +38,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 -ml-4">
             <img 
-              src="../../images/logo.png" 
+              src="/images/logo.png"  
               alt="Machine Logo" 
               className={`h-24 ${!isDark ? 'brightness-0' : ''}`}
             />
