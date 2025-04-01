@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react'
 import { FiMenu, FiX, FiChevronDown, FiSun, FiMoon } from 'react-icons/fi'
 import { ThemeContext } from '../../App'
+import logo from '../../assets/logo.png'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 -ml-4">
             <img 
-              src="/images/logo.png"  
+              src={logo}
               alt="Machine Logo" 
               className={`h-24 ${!isDark ? 'brightness-0' : ''}`}
             />
