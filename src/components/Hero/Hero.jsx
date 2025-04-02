@@ -1,21 +1,30 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../App'
+import backgroundImage from '../../assets/Background image.png'
 
 const Hero = () => {
   const { isDark } = useContext(ThemeContext)
 
   return (
-    <div className="min-h-screen flex items-center">
+    <div className="min-h-screen flex items-center relative">
+      {/* Background Image for both Light and Dark Mode */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+      />
+     
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="max-w-6xl mx-auto text-center space-y-12">
           {/* Main Headings */}
           <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 opacity-0 animate-fadeInUp mt-12">
             {/* First Heading */}
             <div className="text-center">
-              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-gray-900'}`}>
+              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
                 COMPREHENSIVE DATA,{' '}
-                <span className="bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent">CAPTURED</span>
+                <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-lg">CAPTURED</span>
               </h1>
             </div>
 
@@ -24,15 +33,15 @@ const Hero = () => {
               <div className={`w-px h-24 ${
                 isDark 
                   ? "bg-gradient-to-b from-blue-400/50 via-blue-400 to-blue-400/50"
-                  : "bg-gradient-to-b from-blue-600/30 via-blue-600 to-blue-600/30"
+                  : "bg-gradient-to-b from-white/50 via-white to-white/50"
               }`}></div>
             </div>
 
             {/* Second Heading */}
             <div className="text-center">
-              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-gray-900'}`}>
+              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
                 CAPITAL RAISING,{' '}
-                <span className="bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent">TRANSFORMED</span>
+                <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-lg">TRANSFORMED</span>
               </h1>
             </div>
           </div>
@@ -40,7 +49,7 @@ const Hero = () => {
           {/* Description */}
           <div className="max-w-3xl mx-auto opacity-0 animate-fadeInUp animate-delay-2 py-8">
             <p className={`text-xl md:text-2xl leading-relaxed font-light ${
-              isDark ? 'text-white/80' : 'text-gray-600'
+              isDark ? 'text-white/80' : 'text-white/90 drop-shadow-lg'
             }`}>
               Leveraging our AI-powered platform, we strategically partner with our clients to provide tailored solutions and execute deals efficiently
             </p>
@@ -51,15 +60,15 @@ const Hero = () => {
             <button className={`px-8 py-3 rounded-full border ${
               isDark
                 ? 'border-white/20 text-white hover:bg-white/10'
-                : 'border-gray-200 text-gray-900 hover:bg-gray-100'
-            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}>
+                : 'border-white/30 text-white hover:bg-white/20'
+            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 drop-shadow-lg`}>
               Get Started
             </button>
             <button className={`px-8 py-3 rounded-full border ${
               isDark
                 ? 'border-white/20 text-white hover:bg-white/10'
-                : 'border-gray-200 text-gray-900 hover:bg-gray-100'
-            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105`}>
+                : 'border-white/30 text-white hover:bg-white/20'
+            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 drop-shadow-lg`}>
               Learn More
             </button>
           </div>

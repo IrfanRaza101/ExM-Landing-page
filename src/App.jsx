@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import HeroSecondary from './components/HeroSecondary/HeroSecondary'
 import Footer from './components/Footer/Footer'
+import backgroundImage from './assets/Background image.png'
 
 export const ThemeContext = createContext()
 
@@ -16,19 +17,19 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-red-950'}`}>
         <div className="relative">
           {/* Background gradient */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className={`absolute inset-0 ${
               isDark 
                 ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-blue-950' 
-                : 'bg-gradient-to-br from-gray-50 via-blue-50 to-blue-100'
+                : 'bg-gradient-to-br from-red-800 via-purple-900 to-blue-950'
             }`} />
             <div className={`absolute inset-0 ${
               isDark 
                 ? 'bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent' 
-                : 'bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-blue-100/50 via-transparent to-transparent'
+                : 'bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-purple-600/20 via-transparent to-transparent'
             }`} />
           </div>
 
@@ -37,32 +38,23 @@ function App() {
             <Navbar />
             <Hero />
             
-            {/* Secondary hero section with simpler background */}
-            <section className={`relative py-20 ${
-              isDark 
-                ? 'bg-gray-800/50' 
-                : 'bg-gray-50/50'
-            }`}>
-              <div className={`absolute inset-0 ${
-                isDark 
-                  ? 'bg-gradient-to-b from-gray-900/30 to-gray-800/30' 
-                  : 'bg-gradient-to-b from-white/30 to-gray-50/30'
-              }`} />
-              <HeroSecondary />
+            {/* Secondary hero section with background image */}
+            <section className="relative py-20">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-red-950/90" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-red-950/90" />
+              <div className="relative">
+                <HeroSecondary />
+              </div>
             </section>
 
-            {/* Footer section with matching theme */}
-            <section className={`relative ${
-              isDark 
-                ? 'bg-gray-900/80' 
-                : 'bg-white/80'
-            }`}>
-              <div className={`absolute inset-0 ${
-                isDark 
-                  ? 'bg-gradient-to-t from-gray-900 to-gray-800' 
-                  : 'bg-gradient-to-t from-white to-gray-50'
-              }`} />
-              <Footer />
+            {/* Footer section with background image */}
+            <section className="relative">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }} />
+             
+              <div className="relative">
+                <Footer />
+              </div>
             </section>
           </div>
         </div>
