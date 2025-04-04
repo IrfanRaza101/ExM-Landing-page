@@ -55,20 +55,17 @@ const Footer = () => {
         <div className="mt-8 opacity-0 animate-fadeInUp animate-delay-2">
           <div className="space-y-4 text-sm">
             <p className="text-gray-400">
-              Services provided by Ex Machina LLC are not intended as an advertisement offer for solicitation for the purchase or sale of any financial instrument.
-            </p>
-            <p className="text-gray-400">
-              Access to our proprietary platform is subject to execution of the applicable user agreement and satisfaction of relevant user requirements decided by Ex Machina LLC in its sole discretion.
+              Services provided by Ex Machina LLC are not intended as an advertisement offer for solicitation for the purchase or sale of any financial instrument. Access to our proprietary platform is subject to execution of the applicable user agreement and satisfaction of relevant user requirements decided by Ex Machina LLC in its sole discretion.
             </p>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="mt-6 pt-6 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 opacity-0 animate-fadeInUp animate-delay-3">
+        <div className="mt-6 pt-6 border-t border-gray-400/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 opacity-0 animate-fadeInUp animate-delay-3">
           <p className="text-sm text-gray-400">
             © 2025 Ex Machina LLC. All rights reserved.
           </p>
-          <p className="text-sm bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent font-medium">
+          <p className="text-ml bg-gradient-to-r from-white to-white bg-clip-text text-transparent font-medium font-['Dancing_Script']">
             Deus Ex Machina
           </p>
         </div>
