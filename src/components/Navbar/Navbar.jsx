@@ -42,61 +42,64 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {/* Products Dropdown */}
-            <div className="relative">
-              <button 
-                className="flex items-center space-x-1 font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200"
-                onClick={() => toggleDropdown('products')}
-              >
-                <span>Our Products</span>
-                <FiChevronDown className={`ml-2 transition-transform duration-200 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
-              </button>
-              {activeDropdown === 'products' && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-gray-900 rounded-2xl shadow-xl py-3 border border-gray-800 transform opacity-100 scale-100 transition-all duration-200">
-                  <div className="absolute top-0 left-6 -mt-2 w-4 h-4 bg-gray-900 border-gray-800 border-t border-l transform rotate-45" />
-                  {products.map((product, index) => (
-                    <a 
-                      key={index}
-                      href={`#${product.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block px-6 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800 first:rounded-t-2xl last:rounded-b-2xl transition-colors duration-200"
-                    >
-                      {product}
-                    </a>
-                  ))}
-                </div>
-              )}
+          <div className="hidden md:flex items-center justify-between flex-1">
+            {/* Main Navigation Items - Centered */}
+            <div className="flex items-center space-x-6 mx-auto">
+              {/* Products Dropdown */}
+              <div className="relative">
+                <button 
+                  className="flex items-center space-x-1 font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200"
+                  onClick={() => toggleDropdown('products')}
+                >
+                  <span>Our Products</span>
+                  <FiChevronDown className={`ml-2 transition-transform duration-200 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
+                </button>
+                {activeDropdown === 'products' && (
+                  <div className="absolute top-full left-0 mt-2 w-72 bg-gray-900 rounded-2xl shadow-xl py-3 border border-gray-800 transform opacity-100 scale-100 transition-all duration-200">
+                    <div className="absolute top-0 left-6 -mt-2 w-4 h-4 bg-gray-900 border-gray-800 border-t border-l transform rotate-45" />
+                    {products.map((product, index) => (
+                      <a 
+                        key={index}
+                        href={`#${product.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-6 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800 first:rounded-t-2xl last:rounded-b-2xl transition-colors duration-200"
+                      >
+                        {product}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Clients Dropdown */}
+              <div className="relative">
+                <button 
+                  className="flex items-center space-x-1 font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200"
+                  onClick={() => toggleDropdown('clients')}
+                >
+                  <span>Our Clients</span>
+                  <FiChevronDown className={`ml-2 transition-transform duration-200 ${activeDropdown === 'clients' ? 'rotate-180' : ''}`} />
+                </button>
+                {activeDropdown === 'clients' && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-gray-900 rounded-2xl shadow-xl py-3 border border-gray-800">
+                    <div className="absolute top-0 left-6 -mt-2 w-4 h-4 bg-gray-900 border-gray-800 border-t border-l transform rotate-45" />
+                    {clients.map((client, index) => (
+                      <a 
+                        key={index}
+                        href={`#${client.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-6 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800 first:rounded-t-2xl last:rounded-b-2xl transition-colors duration-200"
+                      >
+                        {client}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <a href="#demo" className="font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200">Demo</a>
             </div>
 
-            {/* Clients Dropdown */}
-            <div className="relative">
-              <button 
-                className="flex items-center space-x-1 font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200"
-                onClick={() => toggleDropdown('clients')}
-              >
-                <span>Our Clients</span>
-                <FiChevronDown className={`ml-2 transition-transform duration-200 ${activeDropdown === 'clients' ? 'rotate-180' : ''}`} />
-              </button>
-              {activeDropdown === 'clients' && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-gray-900 rounded-2xl shadow-xl py-3 border border-gray-800">
-                  <div className="absolute top-0 left-6 -mt-2 w-4 h-4 bg-gray-900 border-gray-800 border-t border-l transform rotate-45" />
-                  {clients.map((client, index) => (
-                    <a 
-                      key={index}
-                      href={`#${client.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block px-6 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800 first:rounded-t-2xl last:rounded-b-2xl transition-colors duration-200"
-                    >
-                      {client}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <a href="#demo" className="font-medium py-2 px-4 rounded-full text-white hover:text-blue-400 hover:bg-white/10 transition-colors duration-200">Demo</a>
-
-            {/* Theme Toggle and Login Buttons */}
-            <div className="hidden md:flex md:items-center md:space-x-4">
+            {/* Theme Toggle and Login Buttons - Right Aligned */}
+            <div className="flex items-center space-x-4">
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors duration-200"

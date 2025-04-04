@@ -7,13 +7,16 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen flex items-center relative">
-      {/* Background Image for both Light and Dark Mode */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      />
+      {/* Background Image for Light Mode */}
+      {isDark && (
+        <div 
+          
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(${backgroundImage})`,
+          }}
+        />
+      )}
      
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -22,7 +25,7 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 opacity-0 animate-fadeInUp mt-12">
             {/* First Heading */}
             <div className="text-center">
-              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
+              <h1 className={`text-2xl md:text-4xl lg:text-4xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
                 COMPREHENSIVE DATA,{' '}
                 <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-lg">CAPTURED</span>
               </h1>
@@ -39,7 +42,7 @@ const Hero = () => {
 
             {/* Second Heading */}
             <div className="text-center">
-              <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
+              <h1 className={`text-2xl md:text-4xl lg:text-4xl font-bold tracking-tight ${isDark ? 'text-white/90' : 'text-white drop-shadow-lg'}`}>
                 CAPITAL RAISING,{' '}
                 <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent drop-shadow-lg">TRANSFORMED</span>
               </h1>
@@ -53,24 +56,6 @@ const Hero = () => {
             }`}>
               Leveraging our AI-powered platform, we strategically partner with our clients to provide tailored solutions and execute deals efficiently
             </p>
-          </div>
-
-          {/* CTA Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fadeInUp animate-delay-3">
-            <button className={`px-8 py-3 rounded-full border ${
-              isDark
-                ? 'border-white/20 text-white hover:bg-white/10'
-                : 'border-white/30 text-white hover:bg-white/20'
-            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 drop-shadow-lg`}>
-              Get Started
-            </button>
-            <button className={`px-8 py-3 rounded-full border ${
-              isDark
-                ? 'border-white/20 text-white hover:bg-white/10'
-                : 'border-white/30 text-white hover:bg-white/20'
-            } transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 drop-shadow-lg`}>
-              Learn More
-            </button>
           </div>
         </div>
       </div>
