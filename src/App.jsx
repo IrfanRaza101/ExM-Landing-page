@@ -53,7 +53,7 @@ function App() {
             </section>
 
             {/* Footer section with background image */}
-            <section className={`relative ${!isDark && 'bg-gradient-to-b from-gray-900 to-gray-800'}`}>
+            <section className={`relative ${!isDark && 'bg-gradient-to-b from-gray-800 to-gray-950'}`}>
               {isDark && (
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }} />
               )}
